@@ -13,7 +13,7 @@ class OderVC : UIViewController {
   
   var orderMager = OrderManager.shared
   var orderList: [OrderData] = []
-    
+  
   lazy var leftButton = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didTapButton))
   
   public var id : Int = 1
@@ -45,45 +45,58 @@ class OderVC : UIViewController {
     buttonFrame()
   }
   
+  
   //MARK:- POST
   func onPostShowBible(){
-    print("포스트 방식 데이터 가지러옴")
-    let datalist = orderList
-    guard let url = URL(string: "http://52.79.251.125/orders") else {return}
-    var request = URLRequest(url: url)
+    let parameters: [String: Any] = [
+      //      "id" : 4,
+      //      "order_menu" : [orderList],
+      //      "address" : "성수동",
+      //      "delivery_requests" : "단무지",
+      //      "paymentMethod" : "payment_method",
+      //      "order_time" : "dsdd"
+//      "next" : "ee",
+//      "previous": "null",
+//      "results": [
+        "id": 863,
+        "order_menu": "（4다리）불닭볶음치킨 x 1",
+        "restaurant_name": "치킨더홈-광진화양점",
+        "restaurant_image": "https://yogiyo-s3.s3.ap-northeast-2.amazonaws.com/media/restaurant_image/%EC%B9%98%ED%82%A8%EB%8D%94%ED%99%88_20181211_Franchise%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%95%BD%EC%A0%95%EC%84%9C_crop_200x200_JenKKxM.jpg",
+        "status": "접수 대기 중",
+        "order_time": "2020-10-06T14:07:24.043739Z",
+        "review_written": false
+      ]
+    //     "request": [
+    //     "address" : "성수동",
+    //     "delivery_requests" : "단무지"
+    //         ]]
+    
+    let url = String(format: "http://52.79.251.125/orders")
+    guard let serviceUrl = URL(string: url) else { return }
+    
+    var request = URLRequest(url: serviceUrl)
     request.httpMethod = "POST"
-    // 4. HTTP 메시지에 포함될 헤더 설정
-    request.addValue("application/json", forHTTPHeaderField: "text/html")
-    let body = "http://52.79.251.125/orders".data(using:String.Encoding.ascii, allowLossyConversion: false)
-    
-    request.httpBody = body
-    
-    // 5. URLSession 객체를 통해 전송 및 응답값 처리 로직 작성
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters) else {
+      return
+    }
+    request.httpBody = httpBody
+    //   request.timeoutInterval = 20
     let session = URLSession.shared
     session.dataTask(with: request) { (data, response, error) in
-      if let res = response{
-        print(res)
+      if let response = response {
+        print("response" , response)
       }
       if let data = data {
-        do{
+        do {
           let json = try JSONSerialization.jsonObject(with: data, options: [])
-
-          let address = "address"
-          let order_menu = self.orderList
-          let payment_method = "payment_method"
-          let restaurant = "restaurant"
-          let total_price = "total_price"
-          print(json)
-          
-          
-        }catch{
+          print("json", json)
+        } catch {
           print(error)
         }
       }
-      // 6. POST 전송
     }.resume()
   }
-  
   
   let paymentButton : UIButton = {
     let b = UIButton()
@@ -112,6 +125,7 @@ class OderVC : UIViewController {
   //결제하기
   @objc func paymentDidTapButton(_ sender : UIButton){
     onPostShowBible()
+    //  onPostShowBible()
     alertController()    
   }
   
@@ -164,11 +178,11 @@ class OderVC : UIViewController {
   }
   
   func alertController(){
-  
+    
     let alert = UIAlertController(title: "알림", message: "⛳️주문이 완료되었습니다~!🏇🚣‍♂️~!🧘‍♂️ 배달이 시작됩니다.🛥🚁", preferredStyle: UIAlertController.Style.alert)
     alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { action in
       
-     self.dismiss(animated: true)
+      self.dismiss(animated: true)
     }))
     self.present(alert, animated: true, completion: nil)
   }
@@ -269,7 +283,7 @@ extension OderVC : UITableViewDelegate {
   }
   
   @objc func onDoneButtonTapped() {
-  //  pikerView.reloadAllComponents()
+    //  pikerView.reloadAllComponents()
     toolBar.removeFromSuperview()
     pikerView.removeFromSuperview()
     
