@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainTabVC()
+        window?.rootViewController = UINavigationController(rootViewController: DetailMenuVC())
 //        window?.rootViewController = HistoryDetailVC()
         window?.makeKeyAndVisible()
         return true

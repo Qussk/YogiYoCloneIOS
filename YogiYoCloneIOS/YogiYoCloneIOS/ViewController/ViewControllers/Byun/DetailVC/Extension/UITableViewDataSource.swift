@@ -122,20 +122,4 @@ extension DetailMenuVC: UITableViewDataSource{
       }
     }
   }
-  //MARK:- total
-  func totalPrice() -> Int{
-    var total = 0
-    print("오더리스트갯수 확인: ", orderlist?.count)
-    
-    let price = (orderlist?.price) ?? 0
-    let count = (orderlist?.count) ?? 0
-    total += price * count
-    orderlist?.option.forEach{
-        total += $0.price
-      }
-    orderlist?.totalPrice = total
-    
-    return total
-  }
-  
 }

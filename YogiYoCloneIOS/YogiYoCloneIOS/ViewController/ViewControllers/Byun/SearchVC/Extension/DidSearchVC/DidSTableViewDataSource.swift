@@ -28,6 +28,5 @@ extension DidSearchVC : UITableViewDataSource {
     cell.estimatedTime.text = searchArr?.deliveryTime ?? ""
     
     return cell
-  }
 }
-
+}

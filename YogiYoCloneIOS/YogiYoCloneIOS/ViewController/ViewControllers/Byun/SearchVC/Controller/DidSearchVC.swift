@@ -25,7 +25,7 @@ class DidSearchVC : UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    view.backgroundColor = .white
     navigationItem.titleView = searchfield    
     searchList = searchMager.selectSearch()
     print("searchMager:" ,searchMager.selectSearch())

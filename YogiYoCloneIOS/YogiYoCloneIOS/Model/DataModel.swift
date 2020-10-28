@@ -373,6 +373,7 @@ struct OrderData: Codable {
     var count: Int
     var price: Int
     var option: [Option] = []
+    var optiongroup : [OptionGroup] = []
     var totalPrice: Int?
   init(menu: Int, name: String, count: Int, price: Int) {
         self.name = name
@@ -390,6 +391,28 @@ struct OrderData: Codable {
       enum CodingKeys: String, CodingKey {
           case id, name, price
           case optionGroupId = "option_group_id"
+      }
+  }
+  struct OptionGroup: Codable {
+      
+      let id: Int
+      let name: String
+      let menuId: Int
+      let mandatory: Bool
+      let price: Int
+      var option: Option?
+    init(id: Int, name: String, menuId: Int, mandatory: Bool, price:
+    Int) {
+          self.id = id
+          self.name = name
+          self.menuId = menuId
+          self.mandatory = mandatory
+          self.price = price
+      }
+    
+      enum CodingKeys: String, CodingKey {
+          case id, name, mandatory, option, price
+          case menuId = "menu_id"
       }
   }
 }

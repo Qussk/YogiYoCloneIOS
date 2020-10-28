@@ -21,6 +21,7 @@ class SearchVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .white
     navigationItem.titleView = searchfield
     setNavi()
     setSearchfield()
@@ -37,7 +38,7 @@ class SearchVC: UIViewController {
   
   //MARK:-Searchfield
   func setSearchfield(){
-   // searchfield.delegate = self
+  //  searchfield.delegate = self
     searchfield.sizeToFit()
     searchfield.placeholder = "음식점이나 메뉴명으로 검색하세요."
     searchfield.keyboardType = .default
@@ -45,7 +46,6 @@ class SearchVC: UIViewController {
     searchfield.becomeFirstResponder() //항시대기
     searchfield.sizeToFit()
     searchfield.clearButtonMode = .always
-   // searchfield.delegate = self
     searchfield.addTarget(self, action: #selector(textfieldDid(_ :)), for: .editingChanged)
   }
   //MARK:- navi
@@ -60,6 +60,8 @@ class SearchVC: UIViewController {
   
   //MARK:- Aactions
   @objc func searchDidTab(_ sender: UIButton){
+    let vc = DidSearchVC()
+ //   navigationController?.pushViewController(vc, animated: true)
   }
   
   @objc func cancelDidTab(_ sender: UIButton){
@@ -122,22 +124,19 @@ func unSearch(){
   print("검색결과가 없습니다.")
 }
   
-/*
+
 extension SearchVC: UITextFieldDelegate {
-  func textFieldShouldClear(_ textField: UITextField) -> Bool {
-    if textField == searchfield {
-      print("eee")
-
-      searchfield.becomeFirstResponder()
-  }
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if textField == searchfield, searchList == nil{
+      let vc = DidSearchVC()
+      navigationController?.pushViewController(vc, animated: true)
+      }
     return true
-}
-  //화면터치시 키보드 종료
-//   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//     self.searchfield.resignFirstResponder()
-//       }
 
+  //    let vc = DidSearchVC()
+  //    navigationController?.pushViewController(vc, animated: true)
+  //  self.searchfield.text = self.searchList?.results?[0].name
+    }
 }
-*/
-  
+
   

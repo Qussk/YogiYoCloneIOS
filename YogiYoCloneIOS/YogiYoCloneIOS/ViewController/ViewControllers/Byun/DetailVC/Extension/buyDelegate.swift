@@ -24,9 +24,11 @@ extension DetailMenuVC : buyDelegate {
     
     //tableview IndexPath값에 직접 접근
     let indexxxxxx = IndexPath(row: 1, section: section1)
+    print("indexxxxxx", indexxxxxx)
     
     //tableview row값에 직접 접근
     let cellForrow = tableView.cellForRow(at: indexxxxxx)
+    
     //타입캐스팅으로 BuyLastTableViewCell불러오기
     let buycell = cellForrow as? BuyLastTableViewCell
     buycell?.costLable.text = "\(String(totalPrice()))원"
