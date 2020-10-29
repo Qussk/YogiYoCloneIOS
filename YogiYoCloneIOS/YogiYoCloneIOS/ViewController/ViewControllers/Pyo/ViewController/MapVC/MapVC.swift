@@ -8,8 +8,11 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class MapVC: UIViewController {
+    
+    static let listString = "List"
     
     let topView: TopSearchView = {
         let view = TopSearchView()
@@ -27,12 +30,18 @@ class MapVC: UIViewController {
         return tableView
     }()
     
+    var addressData: RoadDocument?
+    var addressList: [Address] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadList()
         
         setUI()
         setLayout()
     }
+    
     private func setUI() {
         
         view.backgroundColor = ColorPiker.customGray
@@ -47,7 +56,7 @@ class MapVC: UIViewController {
         
         topView.searchField.delegate = self
         topView.cancleButton.addTarget(self, action: #selector(cancleToggle(_:)), for: .touchUpInside)
-        topView.nowButton.addTarget(self, action: #selector(pushNowVC(_:)), for: .touchUpInside)
+        topView.nowButton.addTarget(self, action: #selector(nowButtonToggle(_:)), for: .touchUpInside)
         view.addSubview(topView)
         
         view.addSubview(addressTableView)
@@ -69,9 +78,11 @@ class MapVC: UIViewController {
     }
     @objc private func cancleToggle(_ sender: UIButton) {
         
-        topView.searchField.resignFirstResponder()
+        topView.searchField.text = nil
         topView.searchField.isSelected = false
+        topView.searchField.resignFirstResponder()
         
+        addressData = nil
         addressTableView.reloadData()
         
         UIView.animate(withDuration: 0.2) {
@@ -81,8 +92,35 @@ class MapVC: UIViewController {
             self.topView.layoutIfNeeded()
         }
     }
-    @objc private func pushNowVC(_ sender: UIButton) {
-        let nowVC = NowLocationVC()
-        navigationController?.pushViewController(nowVC, animated: true)
+    @objc private func nowButtonToggle(_ sender: UIButton) {
+        
+        pushGoogle()
+    }
+    @objc func removeToggle(_ sender: UIButton) {
+        
+        addressList.remove(at: sender.tag)
+        setList()
+        
+        addressTableView.reloadData()
+    }
+    func setList() {
+        if let encoded = try? JSONEncoder().encode(addressList) {
+            
+            UserDefaults.standard.set(encoded, forKey: MapVC.listString)
+        }
+    }
+    func loadList() {
+        
+        if let savedList = UserDefaults.standard.object(forKey: MapVC.listString) as? Data {
+            if let loadedList = try? JSONDecoder().decode([Address].self, from: savedList) {
+                
+                addressList = loadedList
+            }
+        }
+    }
+    func pushGoogle() {
+        
+        let googleVC = GoogleMapVC()
+        navigationController?.pushViewController(googleVC, animated: true)
     }
 }
