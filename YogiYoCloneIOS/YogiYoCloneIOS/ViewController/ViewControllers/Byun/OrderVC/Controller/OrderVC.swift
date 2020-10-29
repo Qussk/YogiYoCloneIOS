@@ -49,15 +49,21 @@ class OderVC : UIViewController {
   //MARK:- POST
   func onPostShowBible(){
     let parameters: [String: Any] = [
+//      "id": 864,
+//        "order_menu": [orderList],
+//        "address": "중림동",
+//        "delivery_requests": "소스 많이 주세요",
+//        "payment_method": "현금",
+//        "order_time": "2020-10-06T14:07:24.922844Z"]
       //      "id" : 4,
       //      "order_menu" : [orderList],
       //      "address" : "성수동",
       //      "delivery_requests" : "단무지",
       //      "paymentMethod" : "payment_method",
       //      "order_time" : "dsdd"
-//      "next" : "ee",
-//      "previous": "null",
-//      "results": [
+      "next" : "ee",
+      "previous": "null",
+      "results": [
         "id": 863,
         "order_menu": "（4다리）불닭볶음치킨 x 1",
         "restaurant_name": "치킨더홈-광진화양점",
@@ -65,7 +71,7 @@ class OderVC : UIViewController {
         "status": "접수 대기 중",
         "order_time": "2020-10-06T14:07:24.043739Z",
         "review_written": false
-      ]
+      ]]
     //     "request": [
     //     "address" : "성수동",
     //     "delivery_requests" : "단무지"
