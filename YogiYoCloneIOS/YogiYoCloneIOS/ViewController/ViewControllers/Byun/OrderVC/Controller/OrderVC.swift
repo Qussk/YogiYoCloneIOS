@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class OderVC : UIViewController {
   
   var orderMager = OrderManager.shared
