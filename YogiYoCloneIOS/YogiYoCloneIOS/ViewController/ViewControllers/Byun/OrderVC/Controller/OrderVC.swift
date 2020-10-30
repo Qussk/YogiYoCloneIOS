@@ -66,7 +66,6 @@ class OderVC : UIViewController {
         "order_time": " ",
         "review_written": false
       ]]
- 
     let url = String(format: "http://52.79.251.125/orders")
     guard let serviceUrl = URL(string: url) else { return }
     
