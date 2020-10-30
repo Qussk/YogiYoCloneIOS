@@ -32,5 +32,12 @@ class OrderManager {
     orderList.removeAll()
   }
   
+  //orderlist add id number
+  func orderlistNumber() -> Int{
+    var number = 0
+    number += 1
+    return number
+  }
+  
   
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//데이터 관리
 class SearchManager {
   
   //싱글톤

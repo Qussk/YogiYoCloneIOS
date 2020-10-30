@@ -147,8 +147,6 @@ class DetailMenuVC: UIViewController {
     
     tableView.dataSource = self
     tableView.delegate = self
-    
-   // tableView.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y-88, width: self.view.frame.size.width, height: self.view.frame.size.height+88)
     navigationBarLess()
     
     tableView.rowHeight = UITableView.automaticDimension //동적높이
@@ -226,7 +224,6 @@ class DetailMenuVC: UIViewController {
     orderMager.selectedMenus(menus: [orderlist])
     
    // let orderData = OrderData(menu: data!.id, name: data!.name, count: 1, price: data!.price)
-    
   //  vc.menuValue(orderData: orderData)
     
     navigationController?.pushViewController(vc, animated: true)

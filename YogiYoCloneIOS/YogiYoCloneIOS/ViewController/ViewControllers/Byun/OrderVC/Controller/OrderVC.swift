@@ -49,28 +49,24 @@ class OderVC : UIViewController {
   //MARK:- POST
   func onPostShowBible(){
     let parameters: [String: Any] = [
-      //      "id" : 4,
-      //      "order_menu" : [orderList],
-      //      "address" : "성수동",
-      //      "delivery_requests" : "단무지",
-      //      "paymentMethod" : "payment_method",
-      //      "order_time" : "dsdd"
-//      "next" : "ee",
-//      "previous": "null",
-//      "results": [
-        "id": 863,
-        "order_menu": "（4다리）불닭볶음치킨 x 1",
-        "restaurant_name": "치킨더홈-광진화양점",
+//      "id": 864,
+//        "order_menu": [orderList],
+//        "address": "중림동",
+//        "delivery_requests": "소스 많이 주세요",
+//        "payment_method": "현금",
+//        "order_time": "2020-10-06T14:07:24.922844Z"]
+      "next" : "ee",
+      "previous": "null",
+      "results": [
+        "id": "77",
+        "order_menu": "[orderList]",
+        "restaurant_name": "orderList[0].name",
         "restaurant_image": "https://yogiyo-s3.s3.ap-northeast-2.amazonaws.com/media/restaurant_image/%EC%B9%98%ED%82%A8%EB%8D%94%ED%99%88_20181211_Franchise%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%95%BD%EC%A0%95%EC%84%9C_crop_200x200_JenKKxM.jpg",
         "status": "접수 대기 중",
-        "order_time": "2020-10-06T14:07:24.043739Z",
+        "order_time": " ",
         "review_written": false
-      ]
-    //     "request": [
-    //     "address" : "성수동",
-    //     "delivery_requests" : "단무지"
-    //         ]]
-    
+      ]]
+ 
     let url = String(format: "http://52.79.251.125/orders")
     guard let serviceUrl = URL(string: url) else { return }
     
@@ -125,7 +121,6 @@ class OderVC : UIViewController {
   //결제하기
   @objc func paymentDidTapButton(_ sender : UIButton){
     onPostShowBible()
-    //  onPostShowBible()
     alertController()    
   }
   
@@ -172,157 +167,15 @@ class OderVC : UIViewController {
     //타입캐스팅으로 BuyLastTableViewCell불러오기
     let ordercell = cellForrow as? OrderListCell
     ordercell?.totalOrderPriceWon.text = "플리즈"
-    //"\(3500 + orderList[0].totalPrice!)"
     print("출력이 되나요?")
     // print(totalPrice())
   }
   
   func alertController(){
-    
     let alert = UIAlertController(title: "알림", message: "⛳️주문이 완료되었습니다~!🏇🚣‍♂️~!🧘‍♂️ 배달이 시작됩니다.🛥🚁", preferredStyle: UIAlertController.Style.alert)
     alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { action in
-      
       self.dismiss(animated: true)
     }))
     self.present(alert, animated: true, completion: nil)
   }
 }
-
-
-//MARK:-UITableViewDataSource
-extension OderVC : UITableViewDataSource{
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 6
-  }
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    switch section {
-    case 0:  //로그인 유무
-      return 1
-    case 1://주문자정보
-      if open == false {
-        return 2
-      }else {
-        return 2 + 1
-      }
-    case 2: //결제수단 선택
-      return 1
-    case 3: //할인방법 선택
-      return 1
-    case 4: //배달주문 내역
-      return 1
-    default:
-      return 1
-    }
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    switch indexPath.section {
-    case 0:
-      let loginCell = tableView.dequeueReusableCell(withIdentifier: "loginCell", for: indexPath) as! loginCell
-      return loginCell
-    case 1:
-      switch indexPath.row {
-      case 0:
-        let InformationCell = tableView.dequeueReusableCell(withIdentifier: "InformationCell", for: indexPath) as! InformationCell
-        return InformationCell
-      case 1:
-        let CustomOderCell = tableView.dequeueReusableCell(withIdentifier: "CustomOrderCell", for: indexPath) as! CustomOrderCell
-        _ = false
-        CustomOderCell.configure(title: "\(userString)")
-        // print(userString)
-        return CustomOderCell
-        
-      default:
-        let unMembershipCell = tableView.dequeueReusableCell(withIdentifier: "unMembershipCell", for: indexPath) as!
-          unMembershipCell
-        return unMembershipCell
-      }
-    case 2:
-      let PaywithCell = tableView.dequeueReusableCell(withIdentifier: "PaywithCell", for: indexPath) as! PaywithCell
-      return PaywithCell
-    case 3:
-      let MembershipCell = tableView.dequeueReusableCell(withIdentifier: "MembershipCell", for: indexPath) as! MembershipCell
-      return MembershipCell
-    case 4:
-      let OrderListCell = tableView.dequeueReusableCell(withIdentifier: "OrderListCell", for: indexPath) as! OrderListCell
-      print("오더리스트셀 제발 알려주세요", indexPath)
-      OrderListCell.orderData = orderList
-      
-      return OrderListCell
-    case 5 :
-      let paymentCell = tableView.dequeueReusableCell(withIdentifier: "paymentCell", for: indexPath) as! paymentCell
-      return paymentCell
-    default:
-      let loginCell = tableView.dequeueReusableCell(withIdentifier: "loginCell", for: indexPath) as! loginCell
-      return loginCell
-    }
-  }
-}
-//MARK:-UITableViewDelegate
-extension OderVC : UITableViewDelegate {
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.cellForRow(at: indexPath)
-    guard let cell = tableView.cellForRow(at: indexPath) as? CustomOrderCell else {return}
-    guard let index = tableView.indexPath(for: cell) else { return }
-    
-    
-    //MARK:- pikerView
-    if indexPath.section == 1 && indexPath.row == 1 {
-      pikerView.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
-      pikerView.backgroundColor = .white
-      self.view.addSubview(pikerView)
-      
-      toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
-      toolBar.barStyle = .default
-      toolBar.items = [UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
-      self.view.addSubview(toolBar)
-      
-    }
-    
-  }
-  
-  @objc func onDoneButtonTapped() {
-    //  pikerView.reloadAllComponents()
-    toolBar.removeFromSuperview()
-    pikerView.removeFromSuperview()
-    
-  }
-  
-  //헤더
-  func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-    section == 0 ? " " : " "
-  }
-  
-  //푸터뷰 높이
-  func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    switch section{
-    case 0:
-      return 1
-    case 1:
-      return 10
-    case 2:
-      return 0
-    case 3:
-      return 10
-    case 4:
-      return 0
-    default:
-      return 0
-    }
-    
-  }
-}
-
-
-extension OderVC : UISceneDelegate {
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    if scrollView.contentOffset.y > 800 {
-      scrollView.contentOffset.y = 840
-      paymentButton.isHidden = false
-    }else{
-      paymentButton.isHidden = true
-    }
-  }
-}
-

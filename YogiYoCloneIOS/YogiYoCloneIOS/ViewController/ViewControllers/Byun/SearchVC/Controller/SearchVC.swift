@@ -69,7 +69,6 @@ class SearchVC: UIViewController {
   }
   
   @objc func textfieldDid(_ sender : UITextField){
-    
     //2.반환한 데이터(DidSearchData)를 comeData에 넣고
     // textfieldDid가 될때마다 data = comData로 할당하면서, tablevieview도 리로드 되도록한다...
     fechData(text: searchfield.text ?? "") { (comeData) in
@@ -98,7 +97,6 @@ class SearchVC: UIViewController {
 
   //1.함수가 끝날 때 completion으로 DidSearchData를 반환한다.
   func fechData(text : String?, completion: @escaping ((DidSearchData) -> Void)){
-
     //변환
     let urlString = "http://52.79.251.125/restaurants?search=\(text ?? "")"
     print("\(urlString)")
