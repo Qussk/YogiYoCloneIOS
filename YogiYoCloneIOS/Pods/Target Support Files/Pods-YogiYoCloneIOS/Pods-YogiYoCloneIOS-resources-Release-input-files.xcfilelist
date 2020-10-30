@@ -1,12 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-YogiYoCloneIOS/Pods-YogiYoCloneIOS-resources.sh
-<<<<<<< HEAD
-<<<<<<< HEAD
 ${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle
 ${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle
-=======
-${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle
->>>>>>> c2366e75c5af69ffb96d669207819882e1ab1427
-=======
-${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle
-${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle
->>>>>>> 93ac9d48adbae95f18b9463cf34acfe1de2f4695

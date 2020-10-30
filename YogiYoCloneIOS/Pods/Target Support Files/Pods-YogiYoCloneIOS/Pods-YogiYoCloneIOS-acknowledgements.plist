@@ -2042,10 +2042,6 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 93ac9d48adbae95f18b9463cf34acfe1de2f4695
 			<string>Copyright 2020 Google</string>
 			<key>License</key>
 			<string>Copyright</string>
@@ -2056,11 +2052,6 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-<<<<<<< HEAD
-=======
->>>>>>> c2366e75c5af69ffb96d669207819882e1ab1427
-=======
->>>>>>> 93ac9d48adbae95f18b9463cf34acfe1de2f4695
 			<string>
                                  Apache License
                            Version 2.0, January 2004
