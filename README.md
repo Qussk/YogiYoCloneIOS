@@ -220,7 +220,8 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 
 <div>
 <p align="center">
-<img width="200" src= https://qussk.github.io/image/gif/yogi10.gif">
+<img width="200" src= https://qussk.github.io/image/gif/yogi33.gif">
+<img width="200" src= https://qussk.github.io/image/gif/yogi44.gif">
 </p>
 </div>
 
@@ -235,7 +236,7 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 <div>
 <p align="center">
 <img width="200" alt="2" src="https://qussk.github.io/image/gif/yogi2.gif">
-<img width="200" alt="5" src="https://qussk.github.io/image/gif/yogi11.gif">
+<img width="200" alt="5" src="https://qussk.github.io/image/gif/yogi5.gif">
 </p>
 </div>
 
@@ -252,7 +253,7 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 <div>
 <p align="center">
 <img width="200" src="https://qussk.github.io/image/gif/search1.gif">
-<img width="200" src="https://qussk.github.io/image/gif/search2.gif">
+<img width="200" src="https://qussk.github.io/image/gif/yogi22.gif">
 </p>
 </div>
 
