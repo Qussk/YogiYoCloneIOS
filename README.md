@@ -194,7 +194,7 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 ---
 변윤나
 
-## DetailMenuVC, OrderVC
+## DetailMenuVC
 
 
 - 메뉴 옵션(필/선) 및 수량선택. 결제기능
@@ -205,13 +205,21 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 
 - 옵션,필수등의 체크사항은 데이터에 따라 mandatory(true,false), name, price데이터가 변동되는 것을 고려하여 row와 section값에 직접 접근하여 처리.(필수옵션 - 단일선택, 선택옵션 - 다량선택을 위한 액션은 프로토콜로 처리)
 
-- 체크해제에 대한 데이터 삭제
-
 <div>
 <p align="center">
 <img width="200" src="https://qussk.github.io/image/gif/yogi1.gif">
 <img width="200" src="https://qussk.github.io/image/gif/yogi4.gif">
-<img width="200" src="https://qussk.github.io/image/gif/yogi3.gif">
+</p>
+</div>
+
+## OrderVC
+
+- 이전화면에서 선택한 데이터 내역을 받음. 수정가능.
+- 모델에서 따로 연산처리함
+
+<div>
+<p align="center">
+<img width="200" src= "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/40615ca9-3ab2-419b-918a-a0287a2dbcc7/ezgif.com-gif-maker_%288%29.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201031T064436Z&X-Amz-Expires=86400&X-Amz-Signature=26f20a3497cfeba0e53ea91cac573fe858853eed037976e0cec87ee02386796a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22ezgif.com-gif-maker_%288%29.gif%22">
 </p>
 </div>
 
@@ -232,7 +240,7 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 
 
 
-## SearchVC
+## SearchVC, DidsearchVC
 
 - 검색기능
 
@@ -242,7 +250,8 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 
 <div>
 <p align="center">
-<img width="200" src="https://qussk.github.io/image/gif/yogi6.gif">
+<img width="200" src="https://qussk.github.io/image/gif/search1.gif">
+<img width="200" src="https://qussk.github.io/image/gif/search2.gif">
 </p>
 </div>
 
