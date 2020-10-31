@@ -207,7 +207,7 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 
 <div>
 <p align="center">
-<img width="200" src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5a08590d-e01a-4035-8280-91f4952b3c08/ezgif.com-gif-maker_%286%29.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201031T065619Z&X-Amz-Expires=86400&X-Amz-Signature=02349c1cd11abfe9e2b131dc528b5ae7d067de8c038483547a5f9e5075e313b1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22ezgif.com-gif-maker_%286%29.gif%22">
+<img width="200" src="https://qussk.github.io/image/gif/yogi9.gif">
 <img width="200" src="https://qussk.github.io/image/gif/yogi1.gif">
 <img width="200" src="https://qussk.github.io/image/gif/yogi4.gif">
 </p>
@@ -220,7 +220,7 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 
 <div>
 <p align="center">
-<img width="200" src= "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/40615ca9-3ab2-419b-918a-a0287a2dbcc7/ezgif.com-gif-maker_%288%29.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201031%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201031T064436Z&X-Amz-Expires=86400&X-Amz-Signature=26f20a3497cfeba0e53ea91cac573fe858853eed037976e0cec87ee02386796a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22ezgif.com-gif-maker_%288%29.gif%22">
+<img width="200" src= https://qussk.github.io/image/gif/yogi10.gif">
 </p>
 </div>
 
@@ -235,7 +235,7 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 <div>
 <p align="center">
 <img width="200" alt="2" src="https://qussk.github.io/image/gif/yogi2.gif">
-<img width="200" alt="5" src="https://qussk.github.io/image/gif/yogi5.gif">
+<img width="200" alt="5" src="https://qussk.github.io/image/gif/yogi11.gif">
 </p>
 </div>
 
