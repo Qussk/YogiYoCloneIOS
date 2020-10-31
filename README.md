@@ -220,8 +220,8 @@ iOS동료들과 백엔드와의 장기간 팀프로젝트로 협업에 대한 �
 
 <div>
 <p align="center">
-<img width="200" src= https://qussk.github.io/image/gif/yogi33.gif">
-<img width="200" src= https://qussk.github.io/image/gif/yogi44.gif">
+<img width="200" src= "https://qussk.github.io/image/gif/yogi33.gif">
+<img width="200" src= "https://qussk.github.io/image/gif/yogi44.gif">
 </p>
 </div>
 
