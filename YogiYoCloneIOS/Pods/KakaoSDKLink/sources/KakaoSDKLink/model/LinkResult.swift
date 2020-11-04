@@ -13,6 +13,7 @@
 //  limitations under the License.
 
 import Foundation
+import DynamicCodable
 
 /// 카카오링크 호출 결과
 ///

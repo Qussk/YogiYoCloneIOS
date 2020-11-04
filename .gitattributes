@@ -1,7 +1,11 @@
 *.pbxproj binary merge=union
 *.swift   text diff=swift
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 “GoogleMapsCore” filter=lfs diff=lfs merge=lfs -text
 >>>>>>> 93ac9d48adbae95f18b9463cf34acfe1de2f4695
+=======
+“GoogleMapsCore” filter=lfs diff=lfs merge=lfs -text
+>>>>>>> 6abf81e16d32f61810cc9ad55c60d176af1470c2
 GoogleMapsCore filter=lfs diff=lfs merge=lfs -text

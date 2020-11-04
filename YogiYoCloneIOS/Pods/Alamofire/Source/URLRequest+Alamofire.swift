@@ -24,19 +24,14 @@
 
 import Foundation
 
-extension URLRequest {
+public extension URLRequest {
     /// Returns the `httpMethod` as Alamofire's `HTTPMethod` type.
-    public var method: HTTPMethod? {
+    var method: HTTPMethod? {
         get { httpMethod.flatMap(HTTPMethod.init) }
         set { httpMethod = newValue?.rawValue }
     }
 
-    public func validate() throws {
-        if let url = url, url.isFileURL {
-            // This should become another urlRequestValidationFailed error in Alamofire 6.
-            throw AFError.invalidURL(url: url)
-        }
-
+    func validate() throws {
         if method == .get, let bodyData = httpBody {
             throw AFError.urlRequestValidationFailed(reason: .bodyDataInGETRequest(bodyData))
         }
